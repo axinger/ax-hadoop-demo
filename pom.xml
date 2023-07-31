@@ -5,10 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.axinger</groupId>
-    <artifactId>axinger-hadoop-demo</artifactId>
+    <artifactId>ax-hadoop-demo</artifactId>
     <version>1.0.0</version>
 
-<!--    <packaging>pom</packaging>-->
+    <packaging>pom</packaging>
+    <modules>
+        <module>HdfsDemo</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
