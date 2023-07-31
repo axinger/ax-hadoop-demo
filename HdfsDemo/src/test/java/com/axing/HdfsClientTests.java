@@ -47,6 +47,8 @@ public class HdfsClientTests {
     @Test
     public void delete() throws IOException {
         // 删除文件
+        // 参数1:文件路径,参数2:是否递归
+        //非空文件,非递归,无法删除
         fileSystem.delete(new Path(PATH), true);
     }
 
