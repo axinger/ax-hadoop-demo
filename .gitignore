@@ -35,7 +35,7 @@ build/
 /logs/
 .logs/
 logs/
-
+/out/
 
 #macOS
 # General
