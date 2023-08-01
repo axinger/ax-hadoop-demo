@@ -16,7 +16,6 @@ public class FlowBean implements Writable {
     private long sumFlow; //总流量
 
 
-
     public void setSumFlow() {
         this.sumFlow = this.upFlow + this.downFlow;
     }
@@ -54,7 +53,6 @@ public class FlowBean implements Writable {
         FlowBean combined = new FlowBean();
         combined.upFlow = a.upFlow + b.upFlow;
         combined.downFlow = a.downFlow + b.downFlow;
-
-        combined.sumFlow = a.upFlow + b.upFlow+a.downFlow + b.downFlow;
+        combined.sumFlow = combined.upFlow + combined.downFlow;
     }
 }
