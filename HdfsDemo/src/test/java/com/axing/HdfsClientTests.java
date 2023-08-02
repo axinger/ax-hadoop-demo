@@ -16,6 +16,7 @@ import java.util.Arrays;
  */
 public class HdfsClientTests {
 
+    static String PATH = "/xiyouji/huaguoshan";
     FileSystem fileSystem;
 
     @Before
@@ -35,8 +36,6 @@ public class HdfsClientTests {
         // 关闭资源
         fileSystem.close();
     }
-
-    static String PATH = "/xiyouji/huaguoshan";
 
     @Test
     public void testMkdir() throws IOException {
@@ -83,8 +82,8 @@ public class HdfsClientTests {
 
 
     /**
-     * @Description 文件更名和移动
      * @return void
+     * @Description 文件更名和移动
      * @Date 2023/3/15 23:15
      */
     @Test
@@ -97,17 +96,17 @@ public class HdfsClientTests {
 //        fileSystem.rename(new Path("/input/66.txt") ,new Path("/77.txt"));
 
         // 目录更名
-        fileSystem.rename(new Path("/input") ,new Path("/output.txt"));
+        fileSystem.rename(new Path("/input"), new Path("/output.txt"));
     }
 
 
     /**
-     * @Description 获取文件详细信息
      * @return void
+     * @Description 获取文件详细信息
      * @Date 2023/3/15 23:15
      */
     @Test
-    public void  testListFiles() throws IOException {
+    public void testListFiles() throws IOException {
         // 获取所有文件信息
         RemoteIterator<LocatedFileStatus> listFiles = fileSystem.listFiles(new Path("/"), true);
         // 遍历文件
@@ -132,8 +131,8 @@ public class HdfsClientTests {
 
 
     /**
-     * @Description 文件和文件夹判断
      * @return void
+     * @Description 文件和文件夹判断
      * @Date 2023/3/15 23:15
      */
     @Test

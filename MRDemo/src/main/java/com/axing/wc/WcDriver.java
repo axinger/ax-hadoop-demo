@@ -33,7 +33,7 @@ public class WcDriver {
 
         //6.设置输入路径,和输出路径
         // 输入目录下,所有的文件都会计算
-        FileInputFormat.setInputPaths(job, new Path("./input"));
+        FileInputFormat.setInputPaths(job, new Path("./input/wc"));
         FileOutputFormat.setOutputPath(job, new Path("./out/wcResult"));
 
         //7.提交job

@@ -15,6 +15,13 @@ public class FlowBean implements Writable {
     private long downFlow;//下行流量
     private long sumFlow; //总流量
 
+    // 合并函数
+    public static void combine(FlowBean a, FlowBean b) {
+        FlowBean combined = new FlowBean();
+        combined.upFlow = a.upFlow + b.upFlow;
+        combined.downFlow = a.downFlow + b.downFlow;
+        combined.sumFlow = combined.upFlow + combined.downFlow;
+    }
 
     public void setSumFlow() {
         this.sumFlow = this.upFlow + this.downFlow;
@@ -40,19 +47,10 @@ public class FlowBean implements Writable {
         return upFlow + "\t" + downFlow + "\t" + sumFlow;
     }
 
-
     // 累加函数
     public void accumulate(FlowBean other) {
         this.upFlow += other.upFlow;
         this.downFlow += other.downFlow;
         setSumFlow();
-    }
-
-    // 合并函数
-    public static void combine(FlowBean a, FlowBean b) {
-        FlowBean combined = new FlowBean();
-        combined.upFlow = a.upFlow + b.upFlow;
-        combined.downFlow = a.downFlow + b.downFlow;
-        combined.sumFlow = combined.upFlow + combined.downFlow;
     }
 }

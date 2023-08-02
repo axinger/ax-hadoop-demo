@@ -32,7 +32,7 @@ public class FlowDriver {
         job.setOutputValueClass(FlowBean.class);
 
         //6.设置输入路径,和输出路径
-        FileInputFormat.setInputPaths(job, new Path("./phone"));
+        FileInputFormat.setInputPaths(job, new Path("./input/phone"));
         FileOutputFormat.setOutputPath(job, new Path("./out/phone"));
 
 //        FileInputFormat.setInputPaths(job, new Path(args[0]));
