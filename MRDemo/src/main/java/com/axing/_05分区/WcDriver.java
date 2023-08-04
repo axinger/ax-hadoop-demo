@@ -10,6 +10,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
 
+/**
+ * 分区取决度: reduceNum
+ */
 public class WcDriver {
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
         //1.获取job
