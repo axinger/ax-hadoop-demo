@@ -1,8 +1,8 @@
-package com.axing.writable;
+package com.axing._08分区排序;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 @Data
 @NoArgsConstructor
-public class FlowBean implements Writable {
+public class FlowBean implements WritableComparable<FlowBean> {
     private long upFlow; //上行流量
     private long downFlow;//下行流量
     private long sumFlow; //总流量
@@ -52,5 +52,16 @@ public class FlowBean implements Writable {
         this.upFlow += other.upFlow;
         this.downFlow += other.downFlow;
         setSumFlow();
+    }
+
+    @Override
+    public int compareTo(FlowBean o) {
+        //逆序
+        int compare = Long.compare(o.sumFlow, this.sumFlow);
+        if (compare != 0) {
+            return compare;
+        }
+        //正序
+        return Long.compare(this.upFlow, o.upFlow);
     }
 }

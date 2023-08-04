@@ -1,4 +1,4 @@
-package com.axing.wc2;
+package com.axing._01wc;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -32,12 +32,12 @@ public class WcDriver {
         job.setOutputValueClass(IntWritable.class);
 
         //6.设置输入路径,和输出路径
-        FileInputFormat.setInputPaths(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        // 输入目录下,所有的文件都会计算
+        FileInputFormat.setInputPaths(job, new Path("./input/wc"));
+        FileOutputFormat.setOutputPath(job, new Path("./out/wcResult"));
 
         //7.提交job
         boolean result = job.waitForCompletion(true);
-        System.out.println("提交job result = " + result);
         System.exit(result ? 0 : 1);
     }
 }

@@ -1,4 +1,4 @@
-package com.axing.wc2;
+package com.axing._01wc;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -14,6 +14,7 @@ import java.io.IOException;
  * KEYOUT: Reducer 阶段输出key类型, text
  * VALUEOUT: Reducer 阶段输出value类型,int
  */
+
 public class WcReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     private final IntWritable outV = new IntWritable(1);
@@ -22,6 +23,7 @@ public class WcReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Reducer<Text, IntWritable, Text, IntWritable>.Context context) throws IOException, InterruptedException {
 
+//        log.info("reduce value={},reduce key={}", values, key);
 
         //累加
         int sum = 0;

@@ -1,4 +1,4 @@
-package com.axing.wc2;
+package com.axing._02wc2;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

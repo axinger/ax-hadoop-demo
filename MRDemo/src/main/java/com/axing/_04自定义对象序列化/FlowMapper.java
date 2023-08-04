@@ -1,4 +1,4 @@
-package com.axing.writable;
+package com.axing._04自定义对象序列化;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

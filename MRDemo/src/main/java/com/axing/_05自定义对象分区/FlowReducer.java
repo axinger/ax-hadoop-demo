@@ -1,4 +1,4 @@
-package com.axing.writable;
+package com.axing._05自定义对象分区;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;

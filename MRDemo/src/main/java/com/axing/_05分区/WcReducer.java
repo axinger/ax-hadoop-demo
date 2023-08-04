@@ -1,4 +1,4 @@
-package com.axing.wc;
+package com.axing._05分区;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
