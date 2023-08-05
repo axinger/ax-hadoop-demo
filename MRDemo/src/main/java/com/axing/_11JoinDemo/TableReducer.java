@@ -46,7 +46,7 @@ public class TableReducer extends Reducer<Text, TableBean, TableBean, NullWritab
         //循环遍历,取pName
         for (TableBean bean : orderBeanList) {
             // 聚合后, pid 相同,所以不需要判断
-            bean.setPName(pdBean.getPName());
+            bean.setPdName(pdBean.getPdName());
             //写出
             context.write(bean, NullWritable.get());
         }

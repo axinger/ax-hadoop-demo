@@ -2,64 +2,56 @@ package com.axing._11JoinDemo;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 
 import java.io.IOException;
 
+
 public class TableMapper extends Mapper<LongWritable, Text, Text, TableBean> {
 
     private String fileName;
+    private Text outK = new Text();
+    private TableBean outV = new TableBean();
 
-    private final Text outK = new Text();
-    private final TableBean outV = new TableBean();
-
-    // 初始化方法
     @Override
-    protected void setup(Mapper<LongWritable, Text, Text, TableBean>.Context context) throws IOException, InterruptedException {
-        // 2个文件
+    protected void setup(Context context) throws IOException, InterruptedException {
+        // 初始化  order  pd
         FileSplit split = (FileSplit) context.getInputSplit();
+
         fileName = split.getPath().getName();
-
-
     }
 
-    // 每一行, 也可以获取文件,效率不高
     @Override
-    protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, TableBean>.Context context) throws IOException, InterruptedException {
-
-        //1.获取一行
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        // 1 获取一行
         String line = value.toString();
 
-        //2.判断文件
-        if (fileName.contains("order")) {
+        // 2 判断是哪个文件的
+        if (fileName.contains("order")) {// 处理的是订单表
+
             String[] split = line.split("\t");
 
-            //封装KV
+            // 封装k  v
             outK.set(split[1]);
-
             outV.setId(split[0]);
-            outV.setPId(split[1]);
+            outV.setPdId(split[1]);
             outV.setAmount(Integer.parseInt(split[2]));
-            outV.setPName(""); // 不能漏值
+            outV.setPdName("");
             outV.setFlag("order");
 
-        } else {
+        } else {// 处理的是商品表
             String[] split = line.split("\t");
 
-            //封装KV
-
             outK.set(split[0]);
-
             outV.setId("");
-            outV.setPId(split[0]);
+            outV.setPdId(split[0]);
             outV.setAmount(0);
-            outV.setPName(split[1]); // 不能漏值
+            outV.setPdName(split[1]);
             outV.setFlag("pd");
-
         }
 
+        // 写出
         context.write(outK, outV);
     }
 }

@@ -27,8 +27,6 @@ public class TableDriver {
         job.setOutputKeyClass(TableBean.class);
         job.setOutputValueClass(NullWritable.class);
 
-
-
         FileInputFormat.setInputPaths(job, new Path("./input/11JoinDemo"));
         FileOutputFormat.setOutputPath(job, new Path("./out/11JoinDemo"));
 
