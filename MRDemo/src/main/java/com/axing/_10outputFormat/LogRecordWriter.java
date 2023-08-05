@@ -21,9 +21,9 @@ public class LogRecordWriter extends RecordWriter<Text, NullWritable> {
         try {
             FileSystem fs = FileSystem.get(job.getConfiguration());
 
-            baiduOut = fs.create(new Path("./out/logs/baidu.log"));
+            baiduOut = fs.create(new Path("./out/10logs/baidu.log"));
 
-            otherOut = fs.create(new Path("./out/logs/other.log"));
+            otherOut = fs.create(new Path("./out/10logs/other.log"));
         } catch (IOException e) {
             e.printStackTrace();
         }
