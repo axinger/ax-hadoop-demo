@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class LogMapper extends Mapper<LongWritable, Text,Text, NullWritable> {
+public class LogMapper extends Mapper<LongWritable, Text, Text, NullWritable> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {

@@ -1,7 +1,6 @@
 package com.axing._06全排序;
 
 
-import cn.hutool.core.io.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -33,7 +32,6 @@ public class FlowDriver {
         //5.设置最终输出类型,不是reducer的输出类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
-
 
 
         //6.设置输入路径,和输出路径

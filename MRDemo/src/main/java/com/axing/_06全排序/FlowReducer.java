@@ -14,7 +14,7 @@ public class FlowReducer extends Reducer<FlowBean, Text, Text, FlowBean> {
         //遍历values集合,循环写出,避免总流量相同的情况
         for (Text value : values) {
             //调换KV位置,反向写出
-            context.write(value,key);
+            context.write(value, key);
         }
 
     }
