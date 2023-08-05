@@ -1,4 +1,4 @@
-package com.axing._11JoinDemo;
+package com.axing._11ReducerJoin;
 
 
 import org.apache.hadoop.conf.Configuration;
@@ -27,8 +27,8 @@ public class TableDriver {
         job.setOutputKeyClass(TableBean.class);
         job.setOutputValueClass(NullWritable.class);
 
-        FileInputFormat.setInputPaths(job, new Path("./input/11JoinDemo"));
-        FileOutputFormat.setOutputPath(job, new Path("./out/11JoinDemo"));
+        FileInputFormat.setInputPaths(job, new Path("./input/11ReducerJoin"));
+        FileOutputFormat.setOutputPath(job, new Path("./out/11ReducerJoin"));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);

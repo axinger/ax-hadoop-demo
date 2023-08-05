@@ -1,4 +1,4 @@
-package com.axing._11JoinDemo;
+package com.axing._11ReducerJoin;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.hadoop.io.NullWritable;
