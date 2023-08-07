@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 // map阶段 jon,使用缓存
+//Map Join适用于一张表十分小、一张表很大的场景。
 public class MapJoinDriver {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException, URISyntaxException {
