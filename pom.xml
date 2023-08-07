@@ -12,6 +12,7 @@
     <modules>
         <module>HdfsDemo</module>
         <module>MRDemo</module>
+        <module>YarnDemo</module>
     </modules>
 
     <properties>
@@ -21,6 +22,20 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-client</artifactId>
+                <version>3.2.3</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13.1</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
